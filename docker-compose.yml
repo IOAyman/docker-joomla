@@ -1,0 +1,15 @@
+joomlaweb:
+  image: joomla
+  ports:
+    - "80:80"
+  links:
+    - joomladb:db
+  environment:
+    - JOOMLA_DB_HOST=db
+    - JOOMLA_DB_USER=root
+    - JOOMLA_DB_PASSWORD=helloworld
+
+joomladb:
+  image: mysql
+  environment:
+    - MYSQL_ROOT_PASSWORD=helloworld
